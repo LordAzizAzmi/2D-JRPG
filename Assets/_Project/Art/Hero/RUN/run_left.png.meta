@@ -150,12 +150,12 @@ TextureImporter:
       name: run_left_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 21
-        width: 19
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 37
+        y: 22
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: run_left_1
       rect:
         serializedVersion: 2
-        x: 132
-        y: 21
-        width: 21
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 133
+        y: 22
+        width: 19
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: run_left_2
       rect:
         serializedVersion: 2
-        x: 228
-        y: 21
-        width: 21
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 229
+        y: 22
+        width: 19
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: run_left_3
       rect:
         serializedVersion: 2
-        x: 324
-        y: 22
-        width: 21
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 325
+        y: 23
+        width: 19
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,12 +238,12 @@ TextureImporter:
       name: run_left_4
       rect:
         serializedVersion: 2
-        x: 420
-        y: 22
-        width: 21
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 421
+        y: 23
+        width: 19
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: run_left_5
       rect:
         serializedVersion: 2
-        x: 516
-        y: 22
-        width: 17
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 517
+        y: 23
+        width: 15
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -282,12 +282,12 @@ TextureImporter:
       name: run_left_6
       rect:
         serializedVersion: 2
-        x: 611
-        y: 22
-        width: 22
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 612
+        y: 23
+        width: 20
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -304,12 +304,12 @@ TextureImporter:
       name: run_left_7
       rect:
         serializedVersion: 2
-        x: 708
-        y: 21
-        width: 22
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 709
+        y: 22
+        width: 20
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -326,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9372df0af8131164981ced95f597ddd4
     internalID: 0
     vertices: []
     indices: 
@@ -334,7 +334,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       run_left_0: 700915204636125962
       run_left_1: 5151822504080555552

@@ -20,13 +20,9 @@ namespace WannaBHero.Player
 
         private Animator animator;
         private Rigidbody2D rb;
-
-        // True selagi animasi attack berjalan. Selama true,
-        // input movement & attack baru diabaikan total (lock).
         private bool isAttacking;
 
-        // Arah hadap terakhir, dipertahankan saat berhenti gerak
-        // supaya Blend Tree Idle/Attack tetap menghadap arah yang benar.
+        // Hold Direction, dipertahankan saat berhenti gerak 
         private Vector2 lastDirection = Vector2.down;
 
         private void Awake()
@@ -67,7 +63,7 @@ namespace WannaBHero.Player
                 lastDirection = dir;
             }
 
-            // moveX/moveY tetap berisi arah TERAKHIR walau sedang diam,
+            // moveX/moveY tetap value arah TERAKHIR walau sedang diam,
             // supaya Blend Tree Idle dan Attack tahu harus menghadap ke mana.
             animator.SetFloat(paramMoveX, lastDirection.x);
             animator.SetFloat(paramMoveY, lastDirection.y);
@@ -79,7 +75,7 @@ namespace WannaBHero.Player
         private void HandleAttackInput()
         {
             // Selagi animasi attack berjalan, input attack baru diabaikan total.
-            // Inilah yang mencegah spam klik memotong animasi yang sedang berjalan.
+            // Agar tidak spam attack
             if (isAttacking) return;
 
             bool attack1Pressed = Input.GetKeyDown(KeyCode.Q) || Input.GetMouseButtonDown(0);
@@ -102,12 +98,6 @@ namespace WannaBHero.Player
             animator.SetTrigger(triggerName);
         }
 
-        /// <summary>
-        /// Dipanggil otomatis oleh Animator lewat transition "Has Exit Time"
-        /// dari state Attack1/Attack2 balik ke Idle. Pasang sebagai
-        /// StateMachineBehaviour ATAU panggil manual via Animation Event
-        /// di frame terakhir clip attack (lihat catatan di bawah).
-        /// </summary>
         public void OnAttackAnimationEnd()
         {
             isAttacking = false;

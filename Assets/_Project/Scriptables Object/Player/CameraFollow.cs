@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace WannaBHero.Player
 {
-    //let camera follow target
+    //let camera follow target (player)
     public class CameraFollow : MonoBehaviour
     {
         public Transform target;

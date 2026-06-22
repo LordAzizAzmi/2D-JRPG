@@ -150,12 +150,12 @@ TextureImporter:
       name: attack2_right_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 21
-        width: 20
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 41
+        y: 22
+        width: 18
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: attack2_right_1
       rect:
         serializedVersion: 2
-        x: 139
-        y: 21
-        width: 47
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 140
+        y: 22
+        width: 45
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: attack2_right_2
       rect:
         serializedVersion: 2
-        x: 226
-        y: 21
-        width: 45
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 227
+        y: 22
+        width: 43
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: attack2_right_3
       rect:
         serializedVersion: 2
-        x: 322
-        y: 21
-        width: 37
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 323
+        y: 22
+        width: 35
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,12 +238,12 @@ TextureImporter:
       name: attack2_right_4
       rect:
         serializedVersion: 2
-        x: 419
-        y: 21
-        width: 36
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 420
+        y: 22
+        width: 34
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: attack2_right_5
       rect:
         serializedVersion: 2
-        x: 515
-        y: 21
-        width: 36
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 516
+        y: 22
+        width: 34
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -282,12 +282,12 @@ TextureImporter:
       name: attack2_right_6
       rect:
         serializedVersion: 2
-        x: 612
-        y: 21
-        width: 35
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 613
+        y: 22
+        width: 33
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -304,12 +304,12 @@ TextureImporter:
       name: attack2_right_7
       rect:
         serializedVersion: 2
-        x: 717
-        y: 21
-        width: 19
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 718
+        y: 22
+        width: 17
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -326,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a49e97cc82e98874aa7770664204ab1f
     internalID: 0
     vertices: []
     indices: 
@@ -334,7 +334,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       attack2_right_0: -318900256114518679
       attack2_right_1: -6111027752318158853

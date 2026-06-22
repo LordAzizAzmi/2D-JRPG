@@ -150,12 +150,12 @@ TextureImporter:
       name: run_up_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 22
-        width: 19
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 39
+        y: 23
+        width: 17
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: run_up_1
       rect:
         serializedVersion: 2
-        x: 133
-        y: 25
-        width: 19
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 134
+        y: 26
+        width: 17
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: run_up_2
       rect:
         serializedVersion: 2
-        x: 229
-        y: 23
-        width: 19
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 230
+        y: 24
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: run_up_3
       rect:
         serializedVersion: 2
-        x: 326
-        y: 19
-        width: 19
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 327
+        y: 20
+        width: 17
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,12 +238,12 @@ TextureImporter:
       name: run_up_4
       rect:
         serializedVersion: 2
-        x: 423
-        y: 22
-        width: 19
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 424
+        y: 23
+        width: 17
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: run_up_5
       rect:
         serializedVersion: 2
-        x: 519
-        y: 25
-        width: 20
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 520
+        y: 26
+        width: 18
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -282,12 +282,12 @@ TextureImporter:
       name: run_up_6
       rect:
         serializedVersion: 2
-        x: 616
-        y: 23
-        width: 19
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 617
+        y: 24
+        width: 17
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -304,12 +304,12 @@ TextureImporter:
       name: run_up_7
       rect:
         serializedVersion: 2
-        x: 711
-        y: 19
-        width: 19
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 712
+        y: 20
+        width: 17
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -326,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: caa54e5d073af564b89fbf5725df0db2
     internalID: 0
     vertices: []
     indices: 
@@ -334,7 +334,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       run_up_0: -2101175276847748840
       run_up_1: 3396987343971830283
