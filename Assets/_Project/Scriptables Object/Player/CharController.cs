@@ -22,6 +22,9 @@ namespace WannaBHero.Player
         private Rigidbody2D rb;
         private bool isAttacking;
 
+        public event System.Action OnAttackEnd;
+        public bool IsAttacking => isAttacking;
+
         // Hold Direction, dipertahankan saat berhenti gerak 
         private Vector2 lastDirection = Vector2.down;
 
@@ -102,6 +105,7 @@ namespace WannaBHero.Player
         {
             isAttacking = false;
             animator.SetBool(paramIsAttacking, false);
+            OnAttackEnd?.Invoke();
         }
     }
 }

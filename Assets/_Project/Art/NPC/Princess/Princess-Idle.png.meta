@@ -1,0 +1,769 @@
+fileFormatVersion: 2
+guid: 3f03fc8af835fa045848f01e9f6f752a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -522491438963099599
+    second: Princess-Idle_0
+  - first:
+      213: -2207126157400312592
+    second: Princess-Idle_1
+  - first:
+      213: 2574081788262286844
+    second: Princess-Idle_2
+  - first:
+      213: 3363942419778249012
+    second: Princess-Idle_3
+  - first:
+      213: -3981578798831447369
+    second: Princess-Idle_4
+  - first:
+      213: 6818255765187905069
+    second: Princess-Idle_5
+  - first:
+      213: 8381531899764099080
+    second: Princess-Idle_6
+  - first:
+      213: 2974957453244369094
+    second: Princess-Idle_7
+  - first:
+      213: -8389920858751014899
+    second: Princess-Idle_8
+  - first:
+      213: -3816646535755390729
+    second: Princess-Idle_9
+  - first:
+      213: 5174687263786861261
+    second: Princess-Idle_10
+  - first:
+      213: 1274151263151470173
+    second: Princess-Idle_11
+  - first:
+      213: 8161901282146388538
+    second: Princess-Idle_12
+  - first:
+      213: 8594521922758917321
+    second: Princess-Idle_13
+  - first:
+      213: 2130956868711087710
+    second: Princess-Idle_14
+  - first:
+      213: -4375820948956423795
+    second: Princess-Idle_15
+  - first:
+      213: -7285099399624845849
+    second: Princess-Idle_16
+  - first:
+      213: 2304202124866699019
+    second: Princess-Idle_17
+  - first:
+      213: 7297056137827408330
+    second: Princess-Idle_18
+  - first:
+      213: 6947358279322535296
+    second: Princess-Idle_19
+  - first:
+      213: -8113842325632167433
+    second: Princess-Idle_20
+  - first:
+      213: -6867580337706523560
+    second: Princess-Idle_21
+  - first:
+      213: -6576900907610574012
+    second: Princess-Idle_22
+  - first:
+      213: 1555504327776162763
+    second: Princess-Idle_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Princess-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 777
+        width: 137
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 1}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 138fb66fdccbfb8f0800000000000000
+      internalID: -522491438963099599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 778
+        width: 135
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f47ea52476be51e0800000000000000
+      internalID: -2207126157400312592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 778
+        width: 135
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf50d249fb9f8b320800000000000000
+      internalID: 2574081788262286844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 779
+        width: 134
+        height: 190
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43120cfcecf1fae20800000000000000
+      internalID: 3363942419778249012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 778
+        width: 134
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2dc628d279eb8c0800000000000000
+      internalID: -3981578798831447369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 778
+        width: 134
+        height: 189
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26c8c76e7f4f9e50800000000000000
+      internalID: 6818255765187905069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 554
+        width: 127
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8084b070bde215470800000000000000
+      internalID: 8381531899764099080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 554
+        width: 127
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c8088eaa0c294920800000000000000
+      internalID: 2974957453244369094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 554
+        width: 126
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0861804e63019b80800000000000000
+      internalID: -8389920858751014899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 554
+        width: 127
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0231b723c880bc0800000000000000
+      internalID: -3816646535755390729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 554
+        width: 127
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc201c556ae20d740800000000000000
+      internalID: 5174687263786861261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 554
+        width: 127
+        height: 188
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d563246b2d1bea110800000000000000
+      internalID: 1274151263151470173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_12
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 335
+        width: 118
+        height: 179
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a0426f8f5e44170800000000000000
+      internalID: 8161901282146388538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_13
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 335
+        width: 118
+        height: 179
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc3a5c2720e54770800000000000000
+      internalID: 8594521922758917321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_14
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 335
+        width: 118
+        height: 179
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ef3375bfda29d10800000000000000
+      internalID: 2130956868711087710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_15
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 335
+        width: 118
+        height: 179
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d895db0f706f543c0800000000000000
+      internalID: -4375820948956423795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_16
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 335
+        width: 118
+        height: 179
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e513f3b1b026ea90800000000000000
+      internalID: -7285099399624845849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_17
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 335
+        width: 118
+        height: 179
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f3167df9b2aff10800000000000000
+      internalID: 2304202124866699019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 98
+        width: 118
+        height: 183
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac9594955e9544560800000000000000
+      internalID: 7297056137827408330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_19
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 100
+        width: 115
+        height: 181
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 085836edb89f96060800000000000000
+      internalID: 6947358279322535296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_20
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 100
+        width: 115
+        height: 181
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f15a21d467d56f80800000000000000
+      internalID: -8113842325632167433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_21
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 100
+        width: 117
+        height: 181
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 854ab80a11471b0a0800000000000000
+      internalID: -6867580337706523560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_22
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 100
+        width: 115
+        height: 181
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4437dee68772ab4a0800000000000000
+      internalID: -6576900907610574012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Princess-Idle_23
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 100
+        width: 114
+        height: 181
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc35ea7d1f2469510800000000000000
+      internalID: 1555504327776162763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: dc7dc860c8f29ac4898caf06b582b892
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Princess-Idle_0: -522491438963099599
+      Princess-Idle_1: -2207126157400312592
+      Princess-Idle_10: 5174687263786861261
+      Princess-Idle_11: 1274151263151470173
+      Princess-Idle_12: 8161901282146388538
+      Princess-Idle_13: 8594521922758917321
+      Princess-Idle_14: 2130956868711087710
+      Princess-Idle_15: -4375820948956423795
+      Princess-Idle_16: -7285099399624845849
+      Princess-Idle_17: 2304202124866699019
+      Princess-Idle_18: 7297056137827408330
+      Princess-Idle_19: 6947358279322535296
+      Princess-Idle_2: 2574081788262286844
+      Princess-Idle_20: -8113842325632167433
+      Princess-Idle_21: -6867580337706523560
+      Princess-Idle_22: -6576900907610574012
+      Princess-Idle_23: 1555504327776162763
+      Princess-Idle_3: 3363942419778249012
+      Princess-Idle_4: -3981578798831447369
+      Princess-Idle_5: 6818255765187905069
+      Princess-Idle_6: 8381531899764099080
+      Princess-Idle_7: 2974957453244369094
+      Princess-Idle_8: -8389920858751014899
+      Princess-Idle_9: -3816646535755390729
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
