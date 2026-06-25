@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack1Right
+  m_Name: Slash1
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,35 +21,35 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 7077123744789755254, guid: 81352f74511f73f40bf91ce73751a0af,
+      value: {fileID: 8288426215254106694, guid: 3bf53eecf7acea043adda471a809d120,
         type: 3}
-    - time: 0.125
-      value: {fileID: -2873044830424911513, guid: 81352f74511f73f40bf91ce73751a0af,
+    - time: 0.1
+      value: {fileID: 7028616704906629411, guid: d4eb42bd8c4a1394891188864c42e6fa,
         type: 3}
-    - time: 0.25
-      value: {fileID: 6051972207797671516, guid: 81352f74511f73f40bf91ce73751a0af,
+    - time: 0.2
+      value: {fileID: 3465286685962602723, guid: d218cfcf271d5b94ea74340a05f7eeba,
         type: 3}
-    - time: 0.375
-      value: {fileID: -7024772259408119308, guid: 81352f74511f73f40bf91ce73751a0af,
+    - time: 0.3
+      value: {fileID: 4130640169021434097, guid: 82cba19bd24a45449b197d6f47f3c07a,
+        type: 3}
+    - time: 0.4
+      value: {fileID: -4178046375966092550, guid: 23369f64d42fcde439b4df6327a45312,
         type: 3}
     - time: 0.5
-      value: {fileID: -6584563511459141473, guid: 81352f74511f73f40bf91ce73751a0af,
+      value: {fileID: -6470460504253458178, guid: 3ec9f18aa83a8cb4ca213f4c0a2d1fe8,
         type: 3}
-    - time: 0.625
-      value: {fileID: -6215296532939947018, guid: 81352f74511f73f40bf91ce73751a0af,
+    - time: 0.6
+      value: {fileID: 6937817954938267909, guid: 84ad985045325584f96d3f025a153bd0,
         type: 3}
-    - time: 0.75
-      value: {fileID: -21071389493993931, guid: 81352f74511f73f40bf91ce73751a0af,
-        type: 3}
-    - time: 0.875
-      value: {fileID: -3419394382675504141, guid: 81352f74511f73f40bf91ce73751a0af,
+    - time: 0.7
+      value: {fileID: -855298285791758126, guid: f6ca835ec8c51914d8454d814bfdccff,
         type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 8
+  m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -66,25 +66,25 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 7077123744789755254, guid: 81352f74511f73f40bf91ce73751a0af, type: 3}
-    - {fileID: -2873044830424911513, guid: 81352f74511f73f40bf91ce73751a0af, type: 3}
-    - {fileID: 6051972207797671516, guid: 81352f74511f73f40bf91ce73751a0af, type: 3}
-    - {fileID: -7024772259408119308, guid: 81352f74511f73f40bf91ce73751a0af, type: 3}
-    - {fileID: -6584563511459141473, guid: 81352f74511f73f40bf91ce73751a0af, type: 3}
-    - {fileID: -6215296532939947018, guid: 81352f74511f73f40bf91ce73751a0af, type: 3}
-    - {fileID: -21071389493993931, guid: 81352f74511f73f40bf91ce73751a0af, type: 3}
-    - {fileID: -3419394382675504141, guid: 81352f74511f73f40bf91ce73751a0af, type: 3}
+    - {fileID: 8288426215254106694, guid: 3bf53eecf7acea043adda471a809d120, type: 3}
+    - {fileID: 7028616704906629411, guid: d4eb42bd8c4a1394891188864c42e6fa, type: 3}
+    - {fileID: 3465286685962602723, guid: d218cfcf271d5b94ea74340a05f7eeba, type: 3}
+    - {fileID: 4130640169021434097, guid: 82cba19bd24a45449b197d6f47f3c07a, type: 3}
+    - {fileID: -4178046375966092550, guid: 23369f64d42fcde439b4df6327a45312, type: 3}
+    - {fileID: -6470460504253458178, guid: 3ec9f18aa83a8cb4ca213f4c0a2d1fe8, type: 3}
+    - {fileID: 6937817954938267909, guid: 84ad985045325584f96d3f025a153bd0, type: 3}
+    - {fileID: -855298285791758126, guid: f6ca835ec8c51914d8454d814bfdccff, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -99,15 +99,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.125
-    functionName: SpawnSlash1
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1
-    functionName: OnAttackAnimationEnd
+  - time: 0.8
+    functionName: OnSlashEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
