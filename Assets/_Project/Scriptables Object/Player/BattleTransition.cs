@@ -62,8 +62,18 @@ namespace WannaBHero.Player
             {
                 if (!hit.CompareTag(enemyTag)) continue;
 
-                // Tandai enemy — tunggu animasi attack selesai
-                pendingEnemy = hit.gameObject;
+                EnemyIdentifier id = hit.GetComponentInParent<EnemyIdentifier>();
+
+                if (id == null || id.battlePrefab == null)
+                {
+                    Debug.LogWarning(
+                        $"[BattleTransition] '{hit.transform.name}' tidak punya " +
+                        "EnemyIdentifier atau battlePrefab kosong — skip.");
+                    continue;
+                }
+
+                pendingEnemy = id.gameObject;
+                Debug.Log($"[BattleTransition] Target: {pendingEnemy.name}");
                 return;
             }
         }

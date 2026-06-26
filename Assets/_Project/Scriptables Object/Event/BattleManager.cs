@@ -32,22 +32,25 @@ namespace WannaBHero
             overworldEnemy = overworldEnemyGO;
             previousSceneName = returnScene;
 
-            // take From EnemyIdentifier
-            EnemyIdentifier id = overworldEnemyGO.GetComponent<EnemyIdentifier>();
+            // Cari EnemyIdentifier di GO itu sendiri ATAU parent-nya
+            // karena hit.gameObject bisa jadi child collider
+            EnemyIdentifier id = overworldEnemyGO.GetComponent<EnemyIdentifier>()
+                              ?? overworldEnemyGO.GetComponentInParent<EnemyIdentifier>();
+
             if (id != null && id.battlePrefab != null)
             {
                 enemyBattlePrefab = id.battlePrefab;
-                enemyStats = id.stats;
+                Debug.Log($"[BattleManager] Enemy battle prefab: {enemyBattlePrefab.name}");
             }
             else
             {
-                Debug.LogError($"[BattleManager] Enemy '{overworldEnemyGO.name}' " +
-                               "tidak punya EnemyIdentifier atau battlePrefab kosong!");
+                Debug.LogError(
+                    $"[BattleManager] '{overworldEnemyGO.name}' tidak punya EnemyIdentifier " +
+                    $"atau battlePrefab kosong!\n" +
+                    $"Cek: apakah EnemyIdentifier ada di ROOT prefab, bukan di child.");
             }
 
-            // Hide Enemy when battling
             overworldEnemyGO.SetActive(false);
-
             SceneManager.LoadScene("Battle");
         }
 

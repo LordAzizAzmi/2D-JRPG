@@ -1,43 +1,78 @@
-using System;
 using UnityEngine;
 
 namespace WannaBHero.Battle
 {
-    /// HOW WORKS 
-    /// Pasang di Battle Scene. Membaca BattleManager.Instance (yang sudah
-    /// diisi saat StartBattle() dipanggil dari Main Scene) untuk tahu enemy mana
-    /// yang harus di-spawn, lalu broadcast OnEnemySpawned ke script lain
-    /// (BattlePlayerController) supaya otomatis tahu targetnya.
     public class BattleEnemySpawner : MonoBehaviour
     {
-        [SerializeField] private Transform enemySpawnPoint;
+        [Header("Spawn Point")]
+        [SerializeField] private Transform spawnPoint;
 
-        public static event Action<Transform> OnEnemySpawned;
+        [Header("Fallback — HANYA untuk testing langsung dari Battle scene")]
+        [SerializeField] private GameObject fallbackEnemyPrefab;
+
+        public static System.Action<Transform> OnEnemySpawned;
 
         private void Start()
         {
-            SpawnEncounteredEnemy();
-        }
+            GameObject prefabToSpawn = GetPrefabToSpawn();
 
-        private void SpawnEncounteredEnemy()
-        {
-            BattleManager battleManager = BattleManager.Instance;
-
-            if (battleManager == null || battleManager.enemyBattlePrefab == null)
+            if (prefabToSpawn == null)
             {
-                Debug.LogError("[BattleEnemySpawner] BattleManager.Instance atau enemyBattlePrefab " +
-                                "kosong -- kemungkinan scene Battle dibuka langsung tanpa lewat " +
-                                "BattleTransition di Main Scene.", this);
+                Debug.LogError(
+                    "[BattleEnemySpawner] Tidak ada prefab!\n" +
+                    "Jika testing dari overworld: pastikan EnemyIdentifier ter-assign.\n" +
+                    "Jika testing langsung dari Battle scene: isi Fallback Enemy Prefab.");
                 return;
             }
 
-            Vector3 spawnPosition = enemySpawnPoint != null ? enemySpawnPoint.position : Vector3.zero;
-            GameObject enemyInstance = Instantiate(battleManager.enemyBattlePrefab, spawnPosition, Quaternion.identity);
+            Vector3 pos = spawnPoint != null
+                ? spawnPoint.position
+                : transform.position;
 
-            Debug.Log($"[BattleEnemySpawner] Musuh ter-spawn: {enemyInstance.name} " +
-                      $"(stats: {battleManager.enemyStats?.characterName})");
+            GameObject enemy = Instantiate(prefabToSpawn, pos, Quaternion.identity);
+            Debug.Log($"[BattleEnemySpawner] Spawn: {prefabToSpawn.name} di {pos}");
 
-            OnEnemySpawned?.Invoke(enemyInstance.transform);
+            OnEnemySpawned?.Invoke(enemy.transform);
         }
+
+        private GameObject GetPrefabToSpawn()
+        {
+            // Prioritas 1: datang dari overworld via BattleManager
+            if (BattleManager.Instance != null)
+            {
+                if (BattleManager.Instance.enemyBattlePrefab != null)
+                {
+                    Debug.Log("[BattleEnemySpawner] Menggunakan prefab dari BattleManager.");
+                    return BattleManager.Instance.enemyBattlePrefab;
+                }
+                else
+                {
+                    Debug.LogWarning(
+                        "[BattleEnemySpawner] BattleManager ada tapi enemyBattlePrefab null.\n" +
+                        "Kemungkinan EnemyIdentifier di enemy overworld belum di-assign.");
+                }
+            }
+
+            // Prioritas 2: fallback untuk testing langsung
+            if (fallbackEnemyPrefab != null)
+            {
+                Debug.Log("[BattleEnemySpawner] Menggunakan fallback prefab.");
+                return fallbackEnemyPrefab;
+            }
+
+            return null;
+        }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmosSelected()
+        {
+            if (spawnPoint == null) return;
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(spawnPoint.position, 0.3f);
+            UnityEditor.Handles.Label(
+                spawnPoint.position + Vector3.up * 0.4f,
+                "Enemy Spawn");
+        }
+#endif
     }
 }

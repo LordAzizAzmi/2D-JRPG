@@ -1,16 +1,38 @@
 using UnityEngine;
-using WannaBHero.Battle;
 
 namespace WannaBHero
 {
-    /// Pasang di SETIAP GameObject enemy attackable (Mob/Boss) di Main Scene.
     public class EnemyIdentifier : MonoBehaviour
     {
-        [Tooltip("Prefab yang akan di-spawn di Battle Scene saat enemy ini diserang.")]
+        [Tooltip("Drag form Prefabs Battle)\n")]
         public GameObject battlePrefab;
 
-        [Tooltip("Data stat (HP/Attack/Speed/Defense) milik enemy ini -- " +
-                 "drag MobStats.asset / BossStats.asset / dst.")]
-        public CharacterStatsData stats;
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            // Deteksi jika battlePrefab adalah scene object, bukan prefab asset
+            if (battlePrefab != null)
+            {
+                bool isPrefabAsset = UnityEditor.PrefabUtility
+                    .GetPrefabAssetType(battlePrefab)
+                    != UnityEditor.PrefabAssetType.NotAPrefab;
+
+                if (!isPrefabAsset)
+                {
+                    Debug.LogError(
+                        $"[EnemyIdentifier] '{name}': Battle Prefab adalah ",
+                        this);
+
+                    // Reset supaya tidak tersimpan sebagai scene object
+                    battlePrefab = null;
+                }
+                else
+                {
+                    Debug.Log($"[EnemyIdentifier] '{name}': Battle Prefab OK → " +
+                              battlePrefab.name);
+                }
+            }
+        }
+#endif
     }
 }
