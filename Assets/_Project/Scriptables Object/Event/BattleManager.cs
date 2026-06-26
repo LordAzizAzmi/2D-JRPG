@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WannaBHero.Battle;
 
 namespace WannaBHero
 {
@@ -9,6 +10,7 @@ namespace WannaBHero
 
         [HideInInspector] public GameObject overworldEnemy;   // Hide setelah battle
         [HideInInspector] public GameObject enemyBattlePrefab; // Spawn in battle
+        [HideInInspector] public CharacterStatsData enemyStats; // Stat musuh yang diserang
 
         private string previousSceneName;
 
@@ -20,6 +22,8 @@ namespace WannaBHero
                 return;
             }
             Instance = this;
+
+            transform.SetParent(null);
             DontDestroyOnLoad(gameObject);
         }
 
@@ -33,6 +37,7 @@ namespace WannaBHero
             if (id != null && id.battlePrefab != null)
             {
                 enemyBattlePrefab = id.battlePrefab;
+                enemyStats = id.stats;
             }
             else
             {
@@ -60,6 +65,7 @@ namespace WannaBHero
             }
 
             enemyBattlePrefab = null;
+            enemyStats = null;
             SceneManager.LoadScene(previousSceneName);
         }
     }

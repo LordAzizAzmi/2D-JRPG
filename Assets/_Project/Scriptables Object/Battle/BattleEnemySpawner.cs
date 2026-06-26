@@ -1,54 +1,43 @@
+using System;
 using UnityEngine;
 
 namespace WannaBHero.Battle
 {
-    // add empty Object scene + add "EnemySpawnPoint"
+    /// HOW WORKS 
+    /// Pasang di Battle Scene. Membaca BattleManager.Instance (yang sudah
+    /// diisi saat StartBattle() dipanggil dari Main Scene) untuk tahu enemy mana
+    /// yang harus di-spawn, lalu broadcast OnEnemySpawned ke script lain
+    /// (BattlePlayerController) supaya otomatis tahu targetnya.
     public class BattleEnemySpawner : MonoBehaviour
     {
-        [Header("Spawn")]
-        [Tooltip("Geser GO ini di Scene view untuk atur posisi enemy di battle")]
-        [SerializeField] private Transform spawnPoint;
+        [SerializeField] private Transform enemySpawnPoint;
 
-        // Event untuk notify BattlePlayerController setelah spawn
-        public static System.Action<Transform> OnEnemySpawned;
+        public static event Action<Transform> OnEnemySpawned;
 
         private void Start()
         {
-            if (BattleManager.Instance == null)
-            {
-                Debug.LogWarning("[BattleEnemySpawner] BattleManager tidak ditemukan. " +
-                                 "Mungkin sedang testing langsung dari battle scene.");
-                return;
-            }
-
-            if (BattleManager.Instance.enemyBattlePrefab == null)
-            {
-                Debug.LogError("[BattleEnemySpawner] enemyBattlePrefab null — " +
-                               "cek EnemyIdentifier di enemy overworld.");
-                return;
-            }
-
-            Vector3 pos = spawnPoint != null
-                ? spawnPoint.position
-                : transform.position;
-
-            GameObject enemy = Instantiate(
-                BattleManager.Instance.enemyBattlePrefab,
-                pos,
-                Quaternion.identity);
-
-            // Notify BattlePlayerController agar otomatis assign target
-            OnEnemySpawned?.Invoke(enemy.transform);
+            SpawnEncounteredEnemy();
         }
 
-#if UNITY_EDITOR
-        private void OnDrawGizmosSelected()
+        private void SpawnEncounteredEnemy()
         {
-            if (spawnPoint == null) return;
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(spawnPoint.position, 0.3f);
-            UnityEditor.Handles.Label(spawnPoint.position + Vector3.up * 0.4f, "Enemy Spawn");
+            BattleManager battleManager = BattleManager.Instance;
+
+            if (battleManager == null || battleManager.enemyBattlePrefab == null)
+            {
+                Debug.LogError("[BattleEnemySpawner] BattleManager.Instance atau enemyBattlePrefab " +
+                                "kosong -- kemungkinan scene Battle dibuka langsung tanpa lewat " +
+                                "BattleTransition di Main Scene.", this);
+                return;
+            }
+
+            Vector3 spawnPosition = enemySpawnPoint != null ? enemySpawnPoint.position : Vector3.zero;
+            GameObject enemyInstance = Instantiate(battleManager.enemyBattlePrefab, spawnPosition, Quaternion.identity);
+
+            Debug.Log($"[BattleEnemySpawner] Musuh ter-spawn: {enemyInstance.name} " +
+                      $"(stats: {battleManager.enemyStats?.characterName})");
+
+            OnEnemySpawned?.Invoke(enemyInstance.transform);
         }
-#endif
     }
 }
