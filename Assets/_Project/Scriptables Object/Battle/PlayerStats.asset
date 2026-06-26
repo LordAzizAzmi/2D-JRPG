@@ -15,5 +15,5 @@ MonoBehaviour:
   characterName: Player
   maxHP: 100
   attack: 20
-  speed: 50
+  speed: 100
   defense: 5

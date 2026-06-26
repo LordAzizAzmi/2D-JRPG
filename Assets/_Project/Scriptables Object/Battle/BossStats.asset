@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f5e681418e5064a876a6a8379f263a, type: 3}
   m_Name: BossStats
   m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Battle.CharacterStatsData
-  characterName: 
+  characterName: Boss
   maxHP: 100
-  attack: 10
-  speed: 50
-  defense: 5
+  attack: 20
+  speed: 25
+  defense: 10
