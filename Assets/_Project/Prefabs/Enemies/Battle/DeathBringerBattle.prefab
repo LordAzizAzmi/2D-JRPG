@@ -226,7 +226,7 @@ MonoBehaviour:
   attackPower: 15
   playerTransform: {fileID: 0}
   walkSpeed: 5
-  stopDistance: 1.2
+  stopDistance: 1.3
   stats: {fileID: 11400000, guid: f1a4c949d0343c941a67a3971224cc48, type: 2}
 --- !u!1 &3428232070784504896
 GameObject:

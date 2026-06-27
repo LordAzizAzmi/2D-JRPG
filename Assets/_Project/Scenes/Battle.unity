@@ -11438,7 +11438,7 @@ PrefabInstance:
     - target: {fileID: 4515923793658498040, guid: b4686645d06bed24d94705cbf9409004,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.39
+      value: -2.82
       objectReference: {fileID: 0}
     - target: {fileID: 4515923793658498040, guid: b4686645d06bed24d94705cbf9409004,
         type: 3}
@@ -11488,7 +11488,7 @@ PrefabInstance:
     - target: {fileID: 8732686891951993607, guid: b4686645d06bed24d94705cbf9409004,
         type: 3}
       propertyPath: m_BodyType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11512,8 +11512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Battle.BattlePlayerController
   enemyTransform: {fileID: 0}
-  walkSpeed: 15
-  stopDistance: 1
+  walkSpeed: 70
+  extraGap: 0.3
   paramMoveX: moveX
   paramMoveY: moveY
   paramIsMoving: isMoving

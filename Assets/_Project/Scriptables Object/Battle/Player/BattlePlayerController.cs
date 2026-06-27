@@ -12,8 +12,7 @@ namespace WannaBHero.Battle
 
         [Header("Gerakan")]
         [SerializeField] private float walkSpeed = 6f;
-        [Tooltip("Jarak berhenti sebelum menyentuh enemy")]
-        [SerializeField] private float stopDistance = 1.0f;
+        [SerializeField] private float extraGap = 0.3f;
 
         [Header("Animator Parameter Names")]
         [SerializeField] private string paramMoveX = "moveX";
@@ -43,6 +42,7 @@ namespace WannaBHero.Battle
 
 
         private Animator animator;
+        private Rigidbody2D rb;
         private Vector3 startPos;
         private bool isActing;    // lock input selagi aksi berjalan
         private bool attackDone;  // flag dari Animation Event
@@ -52,6 +52,7 @@ namespace WannaBHero.Battle
         private void Awake()
         {
             animator = GetComponent<Animator>();
+            rb = GetComponent<Rigidbody2D>();
             currentHP = maxHP;
         }
 
@@ -92,14 +93,13 @@ namespace WannaBHero.Battle
         // ─────────────────────────────────────
         //  CORE ROUTINE
         // ─────────────────────────────────────
-
-        // Ganti AttackRoutine yang sudah ada
         private IEnumerator AttackRoutine(string attackTrigger)
         {
             isActing = true;
 
-            // Step 1 — Jalan maju
-            Vector3 attackPos = enemyTransform.position + Vector3.right * stopDistance;
+            // Step 1 — Jalan maju ke depan enemy
+            float gap = GetSpriteHalfWidth(transform) + GetSpriteHalfWidth(enemyTransform) + extraGap;
+            Vector3 attackPos = new Vector3(enemyTransform.position.x - gap, transform.position.y, transform.position.z);
             yield return StartCoroutine(WalkTo(attackPos, moveRight: true));
 
             // Step 2 — Animasi attack
@@ -152,15 +152,20 @@ namespace WannaBHero.Battle
 
             while (Vector3.Distance(transform.position, target) > 0.02f)
             {
-                transform.position = Vector3.MoveTowards(
-                    transform.position,
-                    target,
-                    walkSpeed * Time.deltaTime);
+                // rb.MovePosition to enemies
+                Vector3 nextPos = Vector3.MoveTowards(transform.position, target, walkSpeed * Time.deltaTime);
+                rb.MovePosition(nextPos);
                 yield return null;
             }
 
-            transform.position = target;
+            rb.MovePosition(target);
             animator.SetBool(paramIsMoving, false);
+        }
+
+        private float GetSpriteHalfWidth(Transform t)
+        {
+            var sr = t.GetComponentInChildren<SpriteRenderer>();
+            return sr != null ? sr.bounds.extents.x : 0.5f;
         }
 
         // ─────────────────────────────────────
@@ -204,10 +209,10 @@ namespace WannaBHero.Battle
         private void OnDrawGizmosSelected()
         {
             if (enemyTransform == null) return;
-            // Visualisasi titik berhenti attack
+            float gap = GetSpriteHalfWidth(transform) + GetSpriteHalfWidth(enemyTransform) + extraGap;
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(
-                enemyTransform.position + Vector3.left * stopDistance, 0.2f);
+                new Vector3(enemyTransform.position.x - gap, enemyTransform.position.y, enemyTransform.position.z), 0.2f);
         }
 #endif
     }
