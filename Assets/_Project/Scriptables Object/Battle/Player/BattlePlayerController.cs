@@ -23,14 +23,36 @@ namespace WannaBHero.Battle
         [SerializeField] private string paramAttack1 = "isAttack1";
         [SerializeField] private string paramAttack2 = "isAttack2";
 
+        [Header("Stats")]
+        [SerializeField] private int maxHP = 100;
+        [SerializeField] private int attackPower = 20;
+
+        private int currentHP;
+        private bool inputEnabled;
+
+        [Header("Stats dari ScriptableObject")]
+        [SerializeField] private CharacterStatsData stats;
+
+        // IBattleEntity properties — baca dari SO
+        public string EntityName => stats != null ? stats.characterName : "Player";
+        public int MaxHP => stats != null ? stats.maxHP : 100;
+        public int AttackPower => stats != null ? stats.attack : 20;
+        public int Speed => stats != null ? stats.speed : 50;
+        public bool IsAlive => currentHP > 0;
+        public int CurrentHP => currentHP;
+
+
         private Animator animator;
         private Vector3 startPos;
         private bool isActing;    // lock input selagi aksi berjalan
         private bool attackDone;  // flag dari Animation Event
 
+        public System.Action OnActionEnd;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
+            currentHP = maxHP;
         }
 
         private void Start()
@@ -41,6 +63,8 @@ namespace WannaBHero.Battle
 
         private void Update()
         {
+            if (!inputEnabled) return;
+
             if (isActing) return;
 
             if (Input.GetKeyDown(KeyCode.Q))
@@ -51,49 +75,69 @@ namespace WannaBHero.Battle
 
         private void OnEnable()
         {
-            BattleEnemySpawner.OnEnemySpawned += OnEnemySpawned;
+            BattleEnemySpawner.OnEnemySpawned += HandleEnemySpawned;
         }
 
         private void OnDisable()
         {
-            BattleEnemySpawner.OnEnemySpawned -= OnEnemySpawned;
+            BattleEnemySpawner.OnEnemySpawned -= HandleEnemySpawned;
         }
 
-        private void OnEnemySpawned(Transform spawnedEnemy)
+        private void HandleEnemySpawned(Transform spawnedEnemy)
         {
-            // Auto-assign target enemy setelah di-spawn
             enemyTransform = spawnedEnemy;
-            Debug.Log($"[BattlePlayer] Enemy target: {spawnedEnemy.name}");
+            Debug.Log($"[BattlePlayer] Enemy target set: {spawnedEnemy.name}");
         }
 
         // ─────────────────────────────────────
         //  CORE ROUTINE
         // ─────────────────────────────────────
 
+        // Ganti AttackRoutine yang sudah ada
         private IEnumerator AttackRoutine(string attackTrigger)
         {
             isActing = true;
 
-            // Step 1 — Move to Front of Enemy
-            Vector3 attackPos = enemyTransform.position + Vector3.left * stopDistance;
+            // Step 1 — Jalan maju
+            Vector3 attackPos = enemyTransform.position + Vector3.right * stopDistance;
             yield return StartCoroutine(WalkTo(attackPos, moveRight: true));
 
-            // Step 2 — Trigger attack
+            // Step 2 — Animasi attack
             attackDone = false;
-            animator.SetFloat(paramMoveX, 1f);   
+            animator.SetFloat(paramMoveX, 1f);
             animator.SetFloat(paramMoveY, 0f);
             animator.SetBool(paramIsAttacking, true);
             animator.SetTrigger(attackTrigger);
 
-            // Step 3 — Wait Animation Event OnAttackAnimationEnd()
-            yield return new WaitUntil(() => attackDone);
+            // Tunggu Animation Event ATAU timeout 3 detik
+            float elapsed = 0f;
+            while (!attackDone && elapsed < 3f)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
 
-            // Step 4 — Back to Start Position
+            if (!attackDone)
+                Debug.LogWarning("[BattlePlayer] Timeout! Pasang Animation Event " +
+                                 "'OnAttackAnimationEnd' di frame terakhir clip Attack player.");
+
+            // Step 3 — Deal damage ke enemy
+            IBattleEntity enemy = enemyTransform.GetComponent<IBattleEntity>();
+            if (enemy != null && enemy.IsAlive)
+            {
+                enemy.TakeDamage(attackPower);
+                BattleTurnManager.Instance?.NotifyDamage(enemy.EntityName, attackPower);
+            }
+
+            // Step 4 — Balik ke posisi asal
             yield return StartCoroutine(WalkTo(startPos, moveRight: false));
 
-            // Step 5 — Idle
+            // Step 5 — Idle & enable input giliran berikutnya
             SetIdleRight();
             isActing = false;
+
+            Debug.Log("[BattlePlayer] Selesai menyerang.");
+            OnActionEnd?.Invoke(); // ← WAJIB ada ini
         }
 
         // ─────────────────────────────────────
@@ -140,6 +184,20 @@ namespace WannaBHero.Battle
             animator.SetFloat(paramMoveY, 0f);
             animator.SetBool(paramIsMoving, false);
             animator.SetBool(paramIsAttacking, false);
+        }
+
+        public void EnableInput(bool enable)
+        {
+            inputEnabled = enable;
+        }
+
+        // Take Damage dari musuh
+        public void TakeDamage(int amount)
+        {
+            if (!IsAlive) return;
+            currentHP = Mathf.Max(0, currentHP - amount);
+            Debug.Log($"[Player] Kena {amount} damage. HP: {currentHP}/{maxHP}");
+            // TODO: play hurt animation & update UI HP
         }
 
 #if UNITY_EDITOR

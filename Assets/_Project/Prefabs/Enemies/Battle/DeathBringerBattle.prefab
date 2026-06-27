@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2973370232237847521}
   - component: {fileID: 856800222889595958}
   - component: {fileID: 6195281965497008058}
+  - component: {fileID: 59958853663043730}
+  - component: {fileID: 243740694671575557}
   m_Layer: 20
   m_Name: DeathBringerBattle
   m_TagString: Enemies
@@ -121,7 +123,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &856800222889595958
 BoxCollider2D:
@@ -179,7 +181,7 @@ Animator:
   m_GameObject: {fileID: 2517391023182026458}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1a11f5cafe3afc94bb9ede9a8136bd0a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4e3996f32468a694f993038f7bde5197, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -191,6 +193,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &59958853663043730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517391023182026458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13de02add037fd42838aab8ef65ed28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Battle.EnemyAnimatorBase
+  paramAttack: isAttack
+  paramHurt: isHurt
+  paramDie: isDie
+  paramMoving: isMoving
+  paramMoveX: moveX
+--- !u!114 &243740694671575557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2517391023182026458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2014e870e9bedb747a58f1b52e450e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Battle.EnemyBattleController
+  maxHP: 100
+  attackPower: 15
+  playerTransform: {fileID: 0}
+  walkSpeed: 5
+  stopDistance: 1.2
+  stats: {fileID: 11400000, guid: f1a4c949d0343c941a67a3971224cc48, type: 2}
 --- !u!1 &3428232070784504896
 GameObject:
   m_ObjectHideFlags: 0
