@@ -205,7 +205,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.EnemyIdentifier
   battlePrefab: {fileID: 2517391023182026458}
-  stats: {fileID: 11400000, guid: f1a4c949d0343c941a67a3971224cc48, type: 2}
 --- !u!1 &3428232070784504896
 GameObject:
   m_ObjectHideFlags: 0

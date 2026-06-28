@@ -3,20 +3,21 @@ using UnityEngine;
 
 namespace WannaBHero.Battle
 {
-    // Pasang di root prefab enemy battle
-    // Butuh: EnemyAnimatorBase (untuk animasi)
+    // Pasang di root prefab enemy battle.
+    // Req: EnemyAnimatorBase (untuk animasi)
     [RequireComponent(typeof(EnemyAnimatorBase))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class EnemyBattleController : MonoBehaviour, IBattleEntity
     {
-        [Header("Stats")]
-        [SerializeField] private int maxHP = 100;
-        [SerializeField] private int attackPower = 15;
-
         [Header("Gerakan Maju-Mundur")]
         [SerializeField] private Transform playerTransform;
         [SerializeField] private float walkSpeed = 5f;
-        [SerializeField] private float stopDistance = 1.2f;
+        [Tooltip("Jarak tambahan (gap) di luar lebar sprite, supaya tidak nempel Player.")]
+        [SerializeField] private float extraGap = 0.3f;
 
+        [Header("Arah Hadap Default")]
+        [Tooltip("Atur Rotasi Sprite ")]
+        [SerializeField] private bool defaultFacingRight = false;
 
         [Header("Stats dari ScriptableObject")]
         [SerializeField] private CharacterStatsData stats;
@@ -28,26 +29,26 @@ namespace WannaBHero.Battle
         public bool IsAlive => currentHP > 0;
         public int CurrentHP => currentHP;
 
-
         // Event — notify BattleTurnManager setelah aksi selesai
         public System.Action OnActionEnd;
 
         private int currentHP;
-        private EnemyAnimatorBase enemyAnim; // ← IEnemyAnimator dipakai di sini
+        private Rigidbody2D rb;
+        private EnemyAnimatorBase enemyAnim;
         private Vector3 startPos;
         private bool attackAnimDone;
 
         private void Awake()
         {
+            rb = GetComponent<Rigidbody2D>();
             enemyAnim = GetComponent<EnemyAnimatorBase>();
-            currentHP = maxHP;
+            currentHP = MaxHP;
         }
 
         private void Start()
         {
             startPos = transform.position;
 
-            // Auto-find player via tag
             if (playerTransform == null)
             {
                 GameObject p = GameObject.FindGameObjectWithTag("Player");
@@ -62,6 +63,9 @@ namespace WannaBHero.Battle
                                    "Pastikan Player tag = 'Player'");
                 }
             }
+
+            // Mulai dengan menghadap Player (idle awal di battle).
+            FaceTarget(playerTransform);
         }
 
         // Dipanggil oleh BattleTurnManager saat giliran enemy
@@ -72,18 +76,18 @@ namespace WannaBHero.Battle
 
         private IEnumerator AttackRoutine()
         {
-            // Step 1 — Jalan ke player DENGAN animasi walk
-            Vector3 attackPos = playerTransform.position + Vector3.right * stopDistance;
-            yield return StartCoroutine(WalkTo(attackPos, walkingRight: false));
+            // Step 1 — Jalan maju ke depan Player (masih menghadap Player, natural).
+            float gap = GetSpriteHalfWidth(transform) + GetSpriteHalfWidth(playerTransform) + extraGap;
+            Vector3 attackPos = new Vector3(playerTransform.position.x + gap, transform.position.y, transform.position.z);
+            yield return StartCoroutine(WalkTo(attackPos));
 
             // Step 2 — Stop walk, mulai attack
-            enemyAnim.PlayIdle();
+            enemyAnim.StopWalk();
             yield return new WaitForSeconds(0.1f);
 
             attackAnimDone = false;
             enemyAnim.PlayAttack();
 
-            // Tunggu Animation Event ATAU timeout
             float elapsed = 0f;
             while (!attackAnimDone && elapsed < 3f)
             {
@@ -99,51 +103,81 @@ namespace WannaBHero.Battle
             IBattleEntity player = playerTransform.GetComponent<IBattleEntity>();
             if (player != null && player.IsAlive)
             {
-                player.TakeDamage(attackPower);
-                BattleTurnManager.Instance?.NotifyDamage(player.EntityName, attackPower);
+                player.TakeDamage(AttackPower);
+                BattleTurnManager.Instance?.NotifyDamage(player.EntityName, AttackPower);
             }
 
-            // Step 4 — Reset attack state
-            enemyAnim.OnAttackEnd();
+            // Step 4 — Putar badan menghadap arah BALIK (menjauhi Player) sebelum
+            // jalan mundur -- ini yang mencegah efek "moonwalk" karena cuma
+            // punya 1 clip walk yang didesain menghadap Player.
+            FaceDirection(awayFromPlayer: true);
+            yield return StartCoroutine(WalkTo(startPos));
 
-            // Step 5 — Balik ke posisi asal DENGAN animasi walk
-            yield return StartCoroutine(WalkTo(startPos, walkingRight: true));
-
-            // Step 6 — Idle & notify
+            // Step 5 — Sampai di tempat: putar lagi menghadap Player, baru Idle.
+            FaceTarget(playerTransform);
+            enemyAnim.StopWalk();
             enemyAnim.PlayIdle();
+
             Debug.Log("[EnemyBattle] Selesai menyerang, balik ke posisi.");
             OnActionEnd?.Invoke();
         }
 
-        // WalkTo dengan parameter arah untuk animasi
-        private IEnumerator WalkTo(Vector3 target, bool walkingRight)
+        /// <summary>
+        /// Jalan ke target TANPA peduli arah hadap (arah hadap diatur terpisah
+        /// lewat FaceDirection/FaceTarget sebelum/sesudah pemanggilan ini).
+        /// Pakai rb.MovePosition (bukan transform.position langsung) supaya
+        /// gerak ini tetap menghormati Collider2D lain -- tidak saling tembus.
+        /// </summary>
+        private IEnumerator WalkTo(Vector3 target)
         {
-            Animator anim = GetComponent<Animator>();
-            if (anim != null)
-            {
-                anim.SetBool("isMoving", true);
-                anim.SetFloat("moveX", walkingRight ? 1f : -1f);
-            }
+            enemyAnim.PlayWalk(transform.localScale.x); // animasi walk, arah hadap sudah diatur sebelumnya
 
             while (Vector3.Distance(transform.position, target) > 0.02f)
             {
-                transform.position = Vector3.MoveTowards(
-                    transform.position, target,
-                    walkSpeed * Time.deltaTime);
+                Vector3 nextPos = Vector3.MoveTowards(transform.position, target, walkSpeed * Time.deltaTime);
+                rb.MovePosition(nextPos);
                 yield return null;
             }
 
-            transform.position = target;
+            rb.MovePosition(target);
+        }
 
-            if (anim != null)
-                anim.SetBool("isMoving", false);
+        /// <summary>Putar badan menghadap (atau membelakangi) target tertentu.</summary>
+        private void FaceTarget(Transform target)
+        {
+            if (target == null) return;
+            bool targetIsToTheRight = target.position.x > transform.position.x;
+            SetFacing(faceRight: targetIsToTheRight);
+        }
+
+        /// <summary>Putar badan menjauhi (atau menghadap) Player secara eksplisit.</summary>
+        private void FaceDirection(bool awayFromPlayer)
+        {
+            bool playerIsToTheLeft = playerTransform.position.x < transform.position.x;
+            // Kalau Player di kiri, "menjauh" berarti hadap kanan, dan sebaliknya.
+            bool faceRight = awayFromPlayer ? playerIsToTheLeft : !playerIsToTheLeft;
+            SetFacing(faceRight);
+        }
+
+        private void SetFacing(bool faceRight)
+        {
+            Vector3 scale = transform.localScale;
+            float absX = Mathf.Abs(scale.x);
+            // defaultFacingRight menentukan tanda mana yang berarti "kanan" untuk sprite ini.
+            scale.x = (faceRight == defaultFacingRight) ? absX : -absX;
+            transform.localScale = scale;
+        }
+
+        private float GetSpriteHalfWidth(Transform t)
+        {
+            var sr = t.GetComponentInChildren<SpriteRenderer>();
+            return sr != null ? sr.bounds.extents.x : 0.5f;
         }
 
         // Dipanggil Animation Event di frame terakhir clip Attack enemy
         public void OnAttackAnimationEnd()
         {
             attackAnimDone = true;
-            enemyAnim.OnAttackEnd();
         }
 
         // IBattleEntity — menerima damage
@@ -152,49 +186,25 @@ namespace WannaBHero.Battle
             if (!IsAlive) return;
 
             currentHP = Mathf.Max(0, currentHP - amount);
-            Debug.Log($"[Enemy] {EntityName} kena {amount} damage. HP: {currentHP}/{maxHP}");
+            Debug.Log($"[Enemy] {EntityName} kena {amount} damage. HP: {currentHP}/{MaxHP}");
 
             if (!IsAlive)
-            {
                 StartCoroutine(DieRoutine());
-            }
             else
-            {
                 StartCoroutine(HurtRoutine());
-            }
         }
 
         private IEnumerator HurtRoutine()
         {
-            enemyAnim.PlayHurt(); // ← IEnemyAnimator dipakai di sini
+            enemyAnim.PlayHurt();
             yield return new WaitForSeconds(0.5f);
-            enemyAnim.OnHurtEnd();
         }
 
         private IEnumerator DieRoutine()
         {
-            enemyAnim.PlayDie(); // ← IEnemyAnimator dipakai di sini
+            enemyAnim.PlayDie();
             yield return new WaitForSeconds(1.5f);
             gameObject.SetActive(false);
-        }
-
-        private IEnumerator WalkTo(Vector3 target)
-        {
-            Animator anim = GetComponent<Animator>();
-
-            // Gunakan isMoving saja — tanpa moveX
-            if (anim != null) anim.SetBool("isMoving", true);
-
-            while (Vector3.Distance(transform.position, target) > 0.02f)
-            {
-                transform.position = Vector3.MoveTowards(
-                    transform.position, target,
-                    walkSpeed * Time.deltaTime);
-                yield return null;
-            }
-
-            transform.position = target;
-            if (anim != null) anim.SetBool("isMoving", false);
         }
     }
 }
