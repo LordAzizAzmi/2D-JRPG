@@ -4,7 +4,7 @@ using UnityEngine;
 namespace WannaBHero.Battle
 {
     [RequireComponent(typeof(Animator))]
-    public class BattlePlayerController : MonoBehaviour
+    public class BattlePlayerController : MonoBehaviour, IBattleEntity
     {
         [Header("Referensi")]
         [Tooltip("Assign Transform root enemy di scene")]
@@ -34,12 +34,16 @@ namespace WannaBHero.Battle
 
         // IBattleEntity properties — baca dari SO
         public string EntityName => stats != null ? stats.characterName : "Player";
-        public int MaxHP => stats != null ? stats.maxHP : 100;
-        public int AttackPower => stats != null ? stats.attack : 20;
+        public int MaxHP => stats != null ? stats.maxHP : maxHP;
+        public int AttackPower => stats != null ? stats.attack : attackPower;
         public int Speed => stats != null ? stats.speed : 50;
+        public int Defense => stats != null ? stats.defense : 0;
         public bool IsAlive => currentHP > 0;
         public int CurrentHP => currentHP;
 
+        // Dipanggil setiap kali HP berubah (saat damage/heal maupun saat battle mulai).
+        // Param: (currentHP, maxHP). Dipakai HealthBarUI untuk update Slider + teks.
+        public System.Action<int, int> OnHPChanged;
 
         private Animator animator;
         private Rigidbody2D rb;
@@ -53,11 +57,13 @@ namespace WannaBHero.Battle
         {
             animator = GetComponent<Animator>();
             rb = GetComponent<Rigidbody2D>();
-            currentHP = maxHP;
+            currentHP = MaxHP;
         }
 
         private void Start()
         {
+            // Kirim HP awal ke UI begitu battle mulai (bar full).
+            OnHPChanged?.Invoke(currentHP, MaxHP);
             startPos = transform.position;
             SetIdleRight();
         }
@@ -125,8 +131,8 @@ namespace WannaBHero.Battle
             IBattleEntity enemy = enemyTransform.GetComponent<IBattleEntity>();
             if (enemy != null && enemy.IsAlive)
             {
-                enemy.TakeDamage(attackPower);
-                BattleTurnManager.Instance?.NotifyDamage(enemy.EntityName, attackPower);
+                enemy.TakeDamage(AttackPower);
+                BattleTurnManager.Instance?.NotifyDamage(enemy.EntityName, AttackPower);
             }
 
             // Step 4 — Balik ke posisi asal
@@ -143,7 +149,6 @@ namespace WannaBHero.Battle
         // ─────────────────────────────────────
         //  MOVEMENT
         // ─────────────────────────────────────
-
         private IEnumerator WalkTo(Vector3 target, bool moveRight)
         {
             animator.SetFloat(paramMoveX, moveRight ? 1f : -1f);
@@ -200,9 +205,11 @@ namespace WannaBHero.Battle
         public void TakeDamage(int amount)
         {
             if (!IsAlive) return;
-            currentHP = Mathf.Max(0, currentHP - amount);
-            Debug.Log($"[Player] Kena {amount} damage. HP: {currentHP}/{maxHP}");
-            // TODO: play hurt animation & update UI HP
+            int actualDamage = Mathf.Max(1, amount - Defense); // minimal 1 damage, sisanya diserap Defense
+            currentHP = Mathf.Max(0, currentHP - actualDamage);
+            Debug.Log($"[Player] Kena {amount} damage (Defense {Defense} → actual {actualDamage}). HP: {currentHP}/{MaxHP}");
+            OnHPChanged?.Invoke(currentHP, MaxHP);
+            // TODO: play hurt animation
         }
 
 #if UNITY_EDITOR

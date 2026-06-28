@@ -26,11 +26,16 @@ namespace WannaBHero.Battle
         public int MaxHP => stats != null ? stats.maxHP : 100;
         public int AttackPower => stats != null ? stats.attack : 15;
         public int Speed => stats != null ? stats.speed : 25;
+        public int Defense => stats != null ? stats.defense : 0;
         public bool IsAlive => currentHP > 0;
         public int CurrentHP => currentHP;
 
         // Event — notify BattleTurnManager setelah aksi selesai
         public System.Action OnActionEnd;
+
+        // Dipanggil setiap kali HP berubah (damage/heal/battle mulai).
+        // Param: (currentHP, maxHP). Dipakai HealthBarUI untuk update Slider + teks.
+        public System.Action<int, int> OnHPChanged;
 
         private int currentHP;
         private Rigidbody2D rb;
@@ -47,6 +52,9 @@ namespace WannaBHero.Battle
 
         private void Start()
         {
+            // Kirim HP awal ke UI begitu battle mulai (bar full).
+            OnHPChanged?.Invoke(currentHP, MaxHP);
+
             startPos = transform.position;
 
             if (playerTransform == null)
@@ -107,9 +115,7 @@ namespace WannaBHero.Battle
                 BattleTurnManager.Instance?.NotifyDamage(player.EntityName, AttackPower);
             }
 
-            // Step 4 — Putar badan menghadap arah BALIK (menjauhi Player) sebelum
-            // jalan mundur -- ini yang mencegah efek "moonwalk" karena cuma
-            // punya 1 clip walk yang didesain menghadap Player.
+            // Step 4 — Putar badan menghadap arah BALIK (menjauhi Player)
             FaceDirection(awayFromPlayer: true);
             yield return StartCoroutine(WalkTo(startPos));
 
@@ -122,12 +128,7 @@ namespace WannaBHero.Battle
             OnActionEnd?.Invoke();
         }
 
-        /// <summary>
-        /// Jalan ke target TANPA peduli arah hadap (arah hadap diatur terpisah
-        /// lewat FaceDirection/FaceTarget sebelum/sesudah pemanggilan ini).
-        /// Pakai rb.MovePosition (bukan transform.position langsung) supaya
-        /// gerak ini tetap menghormati Collider2D lain -- tidak saling tembus.
-        /// </summary>
+        /// Jalan ke target TANPA peduli arah hadap 
         private IEnumerator WalkTo(Vector3 target)
         {
             enemyAnim.PlayWalk(transform.localScale.x); // animasi walk, arah hadap sudah diatur sebelumnya
@@ -142,7 +143,7 @@ namespace WannaBHero.Battle
             rb.MovePosition(target);
         }
 
-        /// <summary>Putar badan menghadap (atau membelakangi) target tertentu.</summary>
+        ///Rotasi badan menghadap (atau membelakangi) target tertentu.
         private void FaceTarget(Transform target)
         {
             if (target == null) return;
@@ -150,7 +151,7 @@ namespace WannaBHero.Battle
             SetFacing(faceRight: targetIsToTheRight);
         }
 
-        /// <summary>Putar badan menjauhi (atau menghadap) Player secara eksplisit.</summary>
+        ///Rotasi badan menjauhi (atau menghadap) Player secara eksplisit.
         private void FaceDirection(bool awayFromPlayer)
         {
             bool playerIsToTheLeft = playerTransform.position.x < transform.position.x;
@@ -185,8 +186,10 @@ namespace WannaBHero.Battle
         {
             if (!IsAlive) return;
 
-            currentHP = Mathf.Max(0, currentHP - amount);
-            Debug.Log($"[Enemy] {EntityName} kena {amount} damage. HP: {currentHP}/{MaxHP}");
+            int actualDamage = Mathf.Max(1, amount - Defense); // minimal 1 damage, sisanya diserap Defense
+            currentHP = Mathf.Max(0, currentHP - actualDamage);
+            Debug.Log($"[Enemy] {EntityName} kena {amount} damage (Defense {Defense} → actual {actualDamage}). HP: {currentHP}/{MaxHP}");
+            OnHPChanged?.Invoke(currentHP, MaxHP);
 
             if (!IsAlive)
                 StartCoroutine(DieRoutine());

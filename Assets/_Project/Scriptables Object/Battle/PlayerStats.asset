@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Battle.CharacterStatsData
   characterName: Player
   maxHP: 100
-  attack: 20
+  attack: 25
   speed: 50
   defense: 5
