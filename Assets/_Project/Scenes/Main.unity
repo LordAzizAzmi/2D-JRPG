@@ -2156,8 +2156,15 @@ GameObject:
   - component: {fileID: 139959563}
   - component: {fileID: 139959559}
   - component: {fileID: 139959561}
-  - component: {fileID: 139959562}
   - component: {fileID: 139959560}
+  - component: {fileID: 139959567}
+  - component: {fileID: 139959566}
+  - component: {fileID: 139959565}
+  - component: {fileID: 139959564}
+  - component: {fileID: 139959571}
+  - component: {fileID: 139959570}
+  - component: {fileID: 139959569}
+  - component: {fileID: 139959568}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2178,10 +2185,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: 47.808014, y: 22.199982}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 400
+  blockViewHeight: 412.80002
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -2190,9 +2197,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 139959561}
+  - {fileID: 139959571}
   selectedCommands:
-  - {fileID: 139959560}
+  - {fileID: 139959568}
   variables: []
   description: 
   stepPause: 0
@@ -2218,9 +2225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Say
   itemId: 1
   indentLevel: 0
-  storyText: First Try BTW
+  storyText: 'This is our last battle '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 2072842208}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2245,34 +2252,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 67
-    y: 70
-    width: 110.192
+    x: 297.39996
+    y: 37.200005
+    width: 103.768
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
-  blockName: New Block
+  blockName: Princess1
   description: 
-  eventHandler: {fileID: 139959562}
+  eventHandler: {fileID: 0}
   commandList:
   - {fileID: 139959560}
+  - {fileID: 139959566}
+  - {fileID: 139959567}
+  - {fileID: 139959570}
   suppressAllAutoSelections: 0
---- !u!114 &139959562
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139959558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 139959561}
-  suppressBlockAutoSelect: 0
-  waitForFrames: 1
 --- !u!4 &139959563
 Transform:
   m_ObjectHideFlags: 0
@@ -2281,13 +2276,224 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139959558}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.21497, y: 7.98926, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 973905454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &139959564
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139959558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 5
+  indentLevel: 0
+  storyText: Leave this to us. Focus on finding the boss.
+  description: 
+  character: {fileID: 1098906158}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &139959565
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139959558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Block
+  nodeRect:
+    serializedVersion: 2
+    x: 433.39612
+    y: 53.600033
+    width: 86.464005
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 4
+  blockName: Knight
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 139959564}
+  suppressAllAutoSelections: 0
+--- !u!114 &139959566
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139959558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 3
+  indentLevel: 0
+  storyText: Once I've regained my strength, I'll do everything I can to help.
+  description: 
+  character: {fileID: 2072842208}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &139959567
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139959558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 2
+  indentLevel: 0
+  storyText: May this battle be our last, and may peace return to the kingdom.
+  description: 
+  character: {fileID: 2072842208}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &139959568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139959558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 9
+  indentLevel: 0
+  storyText: I'll end this.
+  description: 
+  character: {fileID: 1375178838}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &139959569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139959558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 8
+  indentLevel: 0
+  storyText: 'Stay safe milady... '
+  description: 
+  character: {fileID: 1375178838}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &139959570
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139959558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Call
+  itemId: 7
+  indentLevel: 0
+  targetFlowchart: {fileID: 139959559}
+  targetBlock: {fileID: 139959571}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &139959571
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139959558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Block
+  nodeRect:
+    serializedVersion: 2
+    x: 147.79208
+    y: 41.400032
+    width: 90.479996
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 6
+  blockName: Player1
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 139959569}
+  - {fileID: 139959568}
+  suppressAllAutoSelections: 0
 --- !u!1 &160017826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5996,7 +6202,7 @@ Transform:
   m_GameObject: {fileID: 284741255}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.77, y: 2.8, z: 0}
+  m_LocalPosition: {x: -7.93, y: -8.45, z: 0}
   m_LocalScale: {x: 3.3, y: 3.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11691,22 +11897,27 @@ PrefabInstance:
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.951457
+      value: 1.2951691
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.3031338
+      value: 1.5122842
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.21407546
+      value: 0.13443485
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.61043316
+      value: 0.505858
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11720,6 +11931,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1451589463}
+    - targetCorrespondingSourceObject: {fileID: 6323719953710832613, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1451589468}
   m_SourcePrefab: {fileID: 100100000, guid: 4b5a4e50c3eca324e97891cc28e84f7c, type: 3}
 --- !u!1001 &403841260
 PrefabInstance:
@@ -13211,7 +13426,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.82, y: 2.93, z: -10}
+  m_LocalPosition: {x: -7.74, y: -6.49, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16513,6 +16728,23 @@ MonoBehaviour:
   idleStateName: Idle
   delayBetweenAttacks: 3
   facingLeft: 0
+--- !u!114 &751119929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751119922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384dea1300cb5a4491d8314aaa9559c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Dialogue.NpcFungusInteractable
+  block:
+    block: {fileID: 139959565}
+  interactKey: 32
+  playerTag: Player
+  interactPrompt: {fileID: 0}
 --- !u!1001 &751513034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18689,22 +18921,27 @@ PrefabInstance:
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.951457
+      value: 1.39046
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.3031338
+      value: 1.7597476
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.21407546
+      value: -0.005426049
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.61043316
+      value: 0.5610692
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18718,6 +18955,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2099633136}
+    - targetCorrespondingSourceObject: {fileID: 6323719953710832613, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2099633141}
   m_SourcePrefab: {fileID: 100100000, guid: 4b5a4e50c3eca324e97891cc28e84f7c, type: 3}
 --- !u!1 &943728388
 GameObject:
@@ -19154,6 +19395,42 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 972110828}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &973905453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 973905454}
+  m_Layer: 0
+  m_Name: Fungus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &973905454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973905453}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.21497, y: -7.98926, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 139959563}
+  - {fileID: 1933055775}
+  - {fileID: 2072842207}
+  - {fileID: 1098906157}
+  - {fileID: 1375178837}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &976019401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20651,6 +20928,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1094757940}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1098906156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098906157}
+  - component: {fileID: 1098906158}
+  m_Layer: 0
+  m_Name: Knight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1098906157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098906156}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.21497, y: 7.98926, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 973905454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1098906158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098906156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Knight
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  soundEffect: {fileID: 0}
+  portraits: []
+  portraitsFace: 2
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1001 &1110315839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28863,22 +29191,27 @@ PrefabInstance:
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.951457
+      value: 1.1740783
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.3031338
+      value: 1.8243634
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.21407546
+      value: 0.102764785
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.61043316
+      value: 0.6147055
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28892,6 +29225,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 751119924}
+    - targetCorrespondingSourceObject: {fileID: 6323719953710832613, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 751119929}
   m_SourcePrefab: {fileID: 100100000, guid: 4b5a4e50c3eca324e97891cc28e84f7c, type: 3}
 --- !u!1001 &1320192794
 PrefabInstance:
@@ -29120,6 +29457,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1369492698}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1375178836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1375178837}
+  - component: {fileID: 1375178838}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1375178837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375178836}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.21497, y: 7.98926, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 973905454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375178838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375178836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Hero
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  soundEffect: {fileID: 0}
+  portraits: []
+  portraitsFace: 2
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1001 &1383902246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29904,6 +30292,23 @@ MonoBehaviour:
   idleStateName: Idle
   delayBetweenAttacks: 3
   facingLeft: 0
+--- !u!114 &1451589468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451589461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384dea1300cb5a4491d8314aaa9559c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Dialogue.NpcFungusInteractable
+  block:
+    block: {fileID: 139959565}
+  interactKey: 32
+  playerTag: Player
+  interactPrompt: {fileID: 0}
 --- !u!1001 &1456222240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32976,22 +33381,27 @@ PrefabInstance:
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.951457
+      value: 1.3103061
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.3031338
+      value: 1.6793039
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.21407546
+      value: 0.22312224
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.61043316
+      value: 0.5883055
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117128348835321587, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33005,6 +33415,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1612589098}
+    - targetCorrespondingSourceObject: {fileID: 6323719953710832613, guid: 4b5a4e50c3eca324e97891cc28e84f7c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1612589099}
   m_SourcePrefab: {fileID: 100100000, guid: 4b5a4e50c3eca324e97891cc28e84f7c, type: 3}
 --- !u!4 &1612589097 stripped
 Transform:
@@ -33028,6 +33442,23 @@ MonoBehaviour:
   idleStateName: Idle
   delayBetweenAttacks: 3
   facingLeft: 0
+--- !u!114 &1612589099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438438212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384dea1300cb5a4491d8314aaa9559c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Dialogue.NpcFungusInteractable
+  block:
+    block: {fileID: 139959565}
+  interactKey: 32
+  playerTag: Player
+  interactPrompt: {fileID: 0}
 --- !u!1001 &1621208460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36730,7 +37161,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 675840490}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 973905454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -36993,6 +37424,8 @@ GameObject:
   - component: {fileID: 1954175060}
   - component: {fileID: 1954175059}
   - component: {fileID: 1954175058}
+  - component: {fileID: 1954175062}
+  - component: {fileID: 1954175063}
   m_Layer: 21
   m_Name: Princess
   m_TagString: Untagged
@@ -37068,11 +37501,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.036439687, y: 0.50549746}
+  m_Offset: {x: -0.0036196113, y: 0.6037463}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0.01}
     pivot: {x: 0.5, y: 0}
@@ -37082,7 +37515,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8707163, y: 1.011095}
+  m_Size: {x: 2.1110759, y: 2.059086}
   m_EdgeRadius: 0
 --- !u!50 &1954175060
 Rigidbody2D:
@@ -37109,7 +37542,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &1954175061
 SpriteRenderer:
@@ -37171,6 +37604,69 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 1
+--- !u!114 &1954175062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954175056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384dea1300cb5a4491d8314aaa9559c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Dialogue.NpcFungusInteractable
+  block:
+    block: {fileID: 139959561}
+  interactKey: 32
+  playerTag: Player
+  interactPrompt: {fileID: 0}
+--- !u!61 &1954175063
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954175056}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.50787854}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0.01}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.37, y: 1.9}
+    newSize: {x: 1.37, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.37, y: 1.1140094}
+  m_EdgeRadius: 0
 --- !u!1001 &1954539539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38274,6 +38770,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2072298875}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2072842206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2072842207}
+  - component: {fileID: 2072842208}
+  m_Layer: 0
+  m_Name: Princess
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2072842207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072842206}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.21497, y: 7.98926, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 973905454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2072842208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072842206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Princess
+  nameColor: {r: 1, g: 1, b: 1, a: 1}
+  soundEffect: {fileID: 0}
+  portraits: []
+  portraitsFace: 2
+  setSayDialog: {fileID: 0}
+  description: 
 --- !u!1001 &2077392834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38638,6 +39185,23 @@ MonoBehaviour:
   idleStateName: Idle
   delayBetweenAttacks: 3
   facingLeft: 0
+--- !u!114 &2099633141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099633134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4384dea1300cb5a4491d8314aaa9559c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WannaBHero.Dialogue.NpcFungusInteractable
+  block:
+    block: {fileID: 139959565}
+  interactKey: 32
+  playerTag: Player
+  interactPrompt: {fileID: 0}
 --- !u!1001 &2102143623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40823,7 +41387,6 @@ SceneRoots:
   - {fileID: 1171674744}
   - {fileID: 621743741}
   - {fileID: 328292246}
-  - {fileID: 139959563}
   - {fileID: 750034585}
   - {fileID: 943728390}
-  - {fileID: 1933055775}
+  - {fileID: 973905454}
