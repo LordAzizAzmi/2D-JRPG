@@ -2228,7 +2228,8 @@ MonoBehaviour:
   storyText: 'This is our last battle '
   description: 
   character: {fileID: 2072842208}
-  portrait: {fileID: 0}
+  portrait: {fileID: -2025156221889428027, guid: 9f74e4d71d34cb04fa4c32689df7e973,
+    type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2300,7 +2301,8 @@ MonoBehaviour:
   storyText: Leave this to us. Focus on finding the boss.
   description: 
   character: {fileID: 1098906158}
-  portrait: {fileID: 0}
+  portrait: {fileID: -703897247109072270, guid: 42e306d8cc5be5c4d95a4ea3f9191d2f,
+    type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2354,7 +2356,8 @@ MonoBehaviour:
   storyText: Once I've regained my strength, I'll do everything I can to help.
   description: 
   character: {fileID: 2072842208}
-  portrait: {fileID: 0}
+  portrait: {fileID: -2025156221889428027, guid: 9f74e4d71d34cb04fa4c32689df7e973,
+    type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2381,7 +2384,8 @@ MonoBehaviour:
   storyText: May this battle be our last, and may peace return to the kingdom.
   description: 
   character: {fileID: 2072842208}
-  portrait: {fileID: 0}
+  portrait: {fileID: -2025156221889428027, guid: 9f74e4d71d34cb04fa4c32689df7e973,
+    type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2393,7 +2397,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &139959568
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2408,7 +2412,8 @@ MonoBehaviour:
   storyText: I'll end this.
   description: 
   character: {fileID: 1375178838}
-  portrait: {fileID: 0}
+  portrait: {fileID: 3897317540139758695, guid: 2cf29368dcdc7dc4989a9d302cd0bdfd,
+    type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -2420,7 +2425,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &139959569
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2435,7 +2440,8 @@ MonoBehaviour:
   storyText: 'Stay safe milady... '
   description: 
   character: {fileID: 1375178838}
-  portrait: {fileID: 0}
+  portrait: {fileID: 3897317540139758695, guid: 2cf29368dcdc7dc4989a9d302cd0bdfd,
+    type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -20975,7 +20981,8 @@ MonoBehaviour:
   nameText: Knight
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
-  portraits: []
+  portraits:
+  - {fileID: -703897247109072270, guid: 42e306d8cc5be5c4d95a4ea3f9191d2f, type: 3}
   portraitsFace: 2
   setSayDialog: {fileID: 0}
   description: 
@@ -29504,7 +29511,8 @@ MonoBehaviour:
   nameText: Hero
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
-  portraits: []
+  portraits:
+  - {fileID: 3897317540139758695, guid: 2cf29368dcdc7dc4989a9d302cd0bdfd, type: 3}
   portraitsFace: 2
   setSayDialog: {fileID: 0}
   description: 
@@ -38817,7 +38825,8 @@ MonoBehaviour:
   nameText: Princess
   nameColor: {r: 1, g: 1, b: 1, a: 1}
   soundEffect: {fileID: 0}
-  portraits: []
+  portraits:
+  - {fileID: -2025156221889428027, guid: 9f74e4d71d34cb04fa4c32689df7e973, type: 3}
   portraitsFace: 2
   setSayDialog: {fileID: 0}
   description: 
